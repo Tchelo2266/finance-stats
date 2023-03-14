@@ -4,12 +4,26 @@
   </ion-toolbar> -->
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-no-padding">
   <ion-grid [fixed]="true">
+    <ion-row class="ion-justify-content-center">
+      <ion-title class="text-center">Finance Stats</ion-title>
+    </ion-row>
     <ion-row>
-      <ion-col>1</ion-col>
-      <ion-col>2</ion-col>
-      <ion-col>3</ion-col>
+      <ion-col>
+        <ion-item counter="true">
+          <ion-label position="floating">Usuário</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item counter="true">
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
