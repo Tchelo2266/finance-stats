@@ -7,22 +7,30 @@
 <ion-content class="ion-no-padding">
   <ion-grid [fixed]="true">
     <ion-row class="ion-justify-content-center">
-      <ion-title class="text-center">Finance Stats</ion-title>
+      <ion-col>
+        <!-- <ion-title class="">Finance Stats</ion-title> -->
+        <p class="">Finance<br>Stats</p>
+      </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-item counter="true">
+        <ion-item >
           <ion-label position="floating">Usuário</ion-label>
-          <ion-input></ion-input>
+          <ion-input [(ngModel)]="usuario" name="usuario"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-item counter="true">
+        <ion-item>
           <ion-label position="floating">Senha</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input type="password" [(ngModel)]="senha" name="senha"></ion-input>
         </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col-botao">
+        <ion-button class="btn-entrar" expand="block" size="default" (click)="printa()">Entrar</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
