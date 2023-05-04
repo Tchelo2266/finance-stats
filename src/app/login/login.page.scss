@@ -10,7 +10,8 @@ ion-grid {
   display: flex;
   justify-content: center;
   // align-items: center;
-  flex-wrap: wrap;
+  // flex-wrap: nowrap;
+  flex-flow: column;
   height: 100%;
   box-sizing: border-box;
 
