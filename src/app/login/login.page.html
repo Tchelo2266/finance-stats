@@ -5,25 +5,30 @@
 </ion-header>
 
 <ion-content class="ion-no-padding">
-  <ion-grid [fixed]="true">
-    <ion-row class="ion-justify-content-center">
-      <ion-title class="text-center">Finance Stats</ion-title>
-    </ion-row>
-    <ion-row>
+  <!-- <ion-title size="large">Finance Stats</ion-title> -->
+  <ion-grid>
+    <ion-row class="titulo-login">
       <ion-col>
-        <ion-item counter="true">
-          <ion-label position="floating">Usuário</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
+        <ion-text>Finance Stats</ion-text>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-item counter="true">
-          <ion-label position="floating">Senha</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+    <div class="campos">
+      <ion-row>
+        <ion-col>
+          <form>
+            <ion-list >
+              <ion-item id="loginField">
+                <ion-label>Usuário</ion-label>
+                <ion-input name="username" type="text" required > </ion-input>
+              </ion-item>
+              <ion-item id="senhaField">
+                <ion-label>Senha</ion-label>
+                <ion-input name="password" type="password" required ></ion-input>
+              </ion-item>
+            </ion-list>
+          </form>
+        </ion-col>
+      </ion-row>
+    </div>
   </ion-grid>
 </ion-content>

@@ -1,5 +1,11 @@
 ion-grid {
-  --ion-grid-width: 50%;
+  // --ion-grid-width: 50%;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  box-sizing: border-box;
 
   --ion-grid-width-xs: 80%;
   --ion-grid-width-sm: 288px;
@@ -7,10 +13,40 @@ ion-grid {
   --ion-grid-width-lg: 480px;
   --ion-grid-width-xl: 570px;
 
-  margin: 70% auto 0 auto;
+  margin: 1em auto 0 auto;
 }
 
-ion-title{
+ion-text{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
   text-align: center;
-  margin: 20px;
+  color: #D65A31;
+}
+
+.titulo-login{
+  text-align: center;
+}
+
+.campos {
+  margin-top: 2rem;
+}
+
+ion-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#loginField {
+  border: white 1px solid;
+  border-radius: 0.5rem;
+}
+
+#senhaField {
+  border: white 1px solid;
+  border-radius: 0.5rem;
 }
