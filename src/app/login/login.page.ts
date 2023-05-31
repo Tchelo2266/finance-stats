@@ -12,6 +12,7 @@ export class LoginPage implements OnInit {
   credenciais: Credenciais = {email: "", senha: ""};
   email:String = "";
   senha:String = "";
+  invalidLogin:boolean = false;
 
   // constructor(private user:String, private pass:String) {
   //   this.usuario = user;
@@ -22,18 +23,20 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  public printa(){
+  public login(){
     this.credenciais = {email: this.email.toString(), senha: this.senha.toString()};
-    console.log("aquii", this.credenciais);
-    let erro = "Usuário ou senha inválidos"
-    this.authService.login(this.credenciais).then((response)=>{
+
+    this.authService.logar(this.credenciais.email, this.credenciais.senha).then((response)=>{
+      console.log("AAAAAAAAAAAAAAAA", response);
       if(response){
         this.router.navigate(['/dashboard']);
       }
-      else{
-        console.error(erro);
-      }
-    })
+    }).catch((erro) => {
+      console.error(erro);
+      this.invalidLogin = true;
+    }).finally(()=>{
+      this.invalidLogin = false;
+    });
 
     // console.log("usuario", this.usuario);
     // console.log("senha", this.senha);

@@ -29,8 +29,16 @@
       </ion-col>
     </ion-row>
     <ion-row>
+      <ion-col>
+        <ion-label *ngIf="invalidLogin">Usuário ou senha inválidos</ion-label>
+        <!-- <ion-item>
+          <ion-input type="password" [(ngModel)]="senha" name="senha"></ion-input>
+        </ion-item> -->
+      </ion-col>
+    </ion-row>
+    <ion-row>
       <ion-col class="col-botao">
-        <ion-button class="btn-entrar" expand="block" size="default" (click)="printa()">Entrar</ion-button>
+        <ion-button class="btn-entrar" expand="block" size="default" (click)="login()">Entrar</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
