@@ -17,7 +17,7 @@ const routes: Routes = [
   // },
   {
     path: 'dashboard',
-    loadComponent: () => import('./dashboard/dashboard.page').then( m => m.DashboardPage)
+    loadComponent: () => import('./dashboard/dashboard.page').then( mod => mod.DashboardPage)
   },
   {
     path: 'folder/:id',

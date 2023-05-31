@@ -1,4 +1,4 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -11,6 +11,7 @@ import Chart from 'chart.js/auto';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
+
 export class DashboardPage implements OnInit {
   usuario:String = "";
   pieChart: any = "";
@@ -23,6 +24,8 @@ export class DashboardPage implements OnInit {
   colunaTotal = 'R$-2800,00';
 
   constructor() { }
+
+
 
   ngOnInit() {
     this.createPieChart();
@@ -71,6 +74,6 @@ export class DashboardPage implements OnInit {
       }
     });
   }
-  
+
 
 }
