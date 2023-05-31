@@ -9,16 +9,17 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   usuarioCheck: Usuario = {
-    id: 1,
+    id: "1",
+    uid: "",
     nome: "Marcelo",
-    nomeUsuario: "Marcelo123",
+    email: "Marcelo123",
     senha: "12345",
   }
 
   constructor() { }
 
   async login(credenciais: Credenciais){
-    if(this.usuarioCheck.nomeUsuario === credenciais.nomeUsuario){
+    if(this.usuarioCheck.email === credenciais.email){
       if(this.usuarioCheck.senha === credenciais.senha){
         return true;
       }
