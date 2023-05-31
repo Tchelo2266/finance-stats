@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  credenciais: Credenciais = {nomeUsuario: "", senha: ""};
-  usuario:String = "";
+  credenciais: Credenciais = {email: "", senha: ""};
+  email:String = "";
   senha:String = "";
 
   // constructor(private user:String, private pass:String) {
@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
   }
 
   public printa(){
-    this.credenciais = {nomeUsuario: this.usuario.toString(), senha: this.senha.toString()};
+    this.credenciais = {email: this.email.toString(), senha: this.senha.toString()};
     console.log("aquii", this.credenciais);
     let erro = "Usuário ou senha inválidos"
     this.authService.login(this.credenciais).then((response)=>{
