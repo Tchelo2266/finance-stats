@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -13,7 +13,7 @@ import Chart from 'chart.js/auto';
 })
 export class DashboardPage implements OnInit {
   usuario:String = "";
-  pieChart: any;
+  pieChart: any = "";
   valorReceita = 'R$5000,00';
   valorDespesa = 'R$3000,00';
   colunaSalario = 'R$4500,00';
@@ -33,7 +33,7 @@ export class DashboardPage implements OnInit {
       labels: ['Comida', 'Contas', 'Carro', 'Estudo', 'Diversão', 'Casa'],
       datasets: [{
         label: 'Gasto:',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [12, 19, 13, 35, 2, 3],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
