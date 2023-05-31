@@ -1,6 +1,17 @@
 export interface Usuario {
-  id: number;
+  uid: string;
+  id: string;
   nome: string;
-  nomeUsuario: string;
+  email: string;
   senha:string;
+}
+
+export function criaUsuario() {
+  return {
+    uid: "",
+    id: "",
+    nome: "",
+    email: "",
+    senha: ""
+  };
 }
