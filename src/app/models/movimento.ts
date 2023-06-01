@@ -1,17 +1,17 @@
 export interface Movimento {
-  id: string;
+  data: string;
   descricao: string;
   tipoMovimento: number;
-  data: string;
   valor: number;
+  id: string;
 }
 
 export function create() {
   return {
-    id: '',
+    data: '',
     descricao: '',
     tipoMovimento: 0,
-    data: '',
-    valor: 0
+    valor: 0,
+    id: '',
   };
 }
