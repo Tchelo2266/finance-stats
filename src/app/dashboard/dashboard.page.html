@@ -41,8 +41,11 @@
   <ion-list inset={true}>
     <ion-list-header>
       <ion-label>Movimentos</ion-label>
+      <ion-button fill="clear" (click)="verMais()">
+        <ion-icon name="arrow-forward-outline" size="large"></ion-icon>
+      </ion-button>
     </ion-list-header>
-    <ion-item>
+    <!-- <ion-item>
       <ion-label>Salário</ion-label>
       <ion-label slot="end" class="ion-text-right"><ion-input [(ngModel)]="colunaSalario"></ion-input></ion-label>
     </ion-item>
@@ -65,7 +68,7 @@
     <ion-item>
       <ion-label>Total</ion-label>
       <ion-label slot="end" class="ion-text-right"><ion-input [(ngModel)]="colunaTotal"></ion-input></ion-label>
-    </ion-item>
+    </ion-item> -->
 
   </ion-list>
 
