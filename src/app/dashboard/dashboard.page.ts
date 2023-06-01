@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import Chart from 'chart.js/auto';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 @Component({
   selector: 'app-dashboard',
@@ -28,7 +30,23 @@ export class DashboardPage implements OnInit {
 
 
   ngOnInit() {
+    this.getFirebaseData();
     this.createPieChart();
+  }
+
+  getFirebaseData() {
+    const firebaseRef = firebase.database().ref();
+  
+    firebaseRef.on('value', (snapshot: firebase.database.DataSnapshot) => {
+      const dados = snapshot.val();
+      this.valorReceita = dados.valorReceita;
+      this.valorDespesa = dados.valorDespesa;
+      this.colunaSalario = dados.colunaSalario;
+      this.colunaRendimentos = dados.colunaRendimentos;
+      this.colunaInternet = dados.colunaInternet;
+      this.colunaGastos = dados.colunaGastos;
+      this.colunaTotal = dados.colunaTotal;
+    });
   }
 
   createPieChart() {
