@@ -1,0 +1,57 @@
+<!-- eslint-disable @angular-eslint/template/eqeqeq -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Movimento</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-button block (click)="cadastro()">
+        <ion-icon name="add-outline"></ion-icon> Cadastrar
+      </ion-button>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item color="light">
+          <ion-label>Descrição</ion-label>
+          <ion-label>Pagar/Receber</ion-label>
+          <ion-label>Valor</ion-label>
+        </ion-item>
+        <ion-item *ngFor="let item of itens">
+          <ion-label>{{ item.descricao }}</ion-label>
+          <ion-label>{{ item.tipoMovimento }}</ion-label>
+          <ion-label *ngIf="item.tipoMovimento == 'receber'" color="success">
+            <ion-icon name="arrow-up-outline"></ion-icon> {{ item.valor }}
+          </ion-label>
+          <ion-label *ngIf="item.tipoMovimento == 'pagar'" color="danger">
+            <ion-icon name="arrow-down-outline"></ion-icon> {{ item.valor }}
+          </ion-label>
+        </ion-item>
+        <ion-item color="light">
+          <ion-label>Valor total: </ion-label>
+          <ion-label></ion-label>
+          <ion-label>R$ 820,00</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>  
+</ion-content>
+
+<style scoped>
+ion-button {
+  --background: #D65A31;
+  --background-hover: #9ce0be;
+  --background-activated: #88f4be;
+  --background-focused: #88f4be;
+  --color: rgb(255, 255, 255);
+  --border-radius: 5;
+  --border-color: #000;
+  --border-style: solid;
+  --border-width: 1px;
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  --ripple-color: deeppink;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+</style>

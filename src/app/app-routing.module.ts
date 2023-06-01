@@ -27,6 +27,13 @@ const routes: Routes = [
     path: 'registro-usuario',
     loadChildren: () => import('./registro-usuario/registro-usuario.module').then( m => m.RegistroUsuarioPageModule)
   },
+  {
+    path: 'movimento',
+    loadChildren: () => import('./movimento/movimento.module').then( m => m.MovimentoPageModule)
+  },  {
+    path: 'cadastro-movimento',
+    loadChildren: () => import('./cadastro-movimento/cadastro-movimento.module').then( m => m.CadastroMovimentoPageModule)
+  },
 
 ];
 

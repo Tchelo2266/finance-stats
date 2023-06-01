@@ -11,6 +11,7 @@ import { Movimento } from '../models/movimento';
 import { getFirestore, collection, doc, Firestore,
   getDocs, getDoc, addDoc, setDoc, deleteDoc }
 from 'firebase/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -31,9 +32,7 @@ export class DashboardPage implements OnInit {
   colunaGastos = 'R$-2800,00';
   colunaTotal = 'R$-2800,00';
 
-  constructor(private fireServ: FirebaseService) { }
-
-
+  constructor(private fireServ: FirebaseService, private router: Router) { }
 
   ngOnInit() {
     this.getFirebaseData();
@@ -66,7 +65,7 @@ export class DashboardPage implements OnInit {
     return movimentosList;
   }
 
-  createPieChart() {
+  public createPieChart() {
     const data = {
       labels: ['Comida', 'Contas', 'Carro', 'Estudo', 'Diversão', 'Casa'],
       datasets: [{
@@ -110,5 +109,7 @@ export class DashboardPage implements OnInit {
     });
   }
 
-
+  public verMais() {
+    this.router.navigate(['/movimento']);
+  }
 }

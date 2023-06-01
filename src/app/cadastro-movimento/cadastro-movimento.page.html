@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de Movimento</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-input 
+          [(ngModel)]="movimento.descricao" ngDefaultControl
+          label="Descrição" 
+          labelPlacement="stacked" 
+          placeholder="Ex: Aluguel, mercado, luz...">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select 
+          [(ngModel)]="movimento.tipoMovimento" ngDefaultControl
+          label="Tipo de Movimento:" 
+          aria-label="tipoMovimento" 
+          interface="popover" 
+          placeholder="Escolha">
+            <ion-select-option value="0">Pagar</ion-select-option>
+            <ion-select-option value="1">Receber</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Data:</ion-label>
+        <ion-datetime-button 
+          [(ngModel)]="movimento.tipoMovimento" ngDefaultControl 
+          datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item>
+        <ion-input 
+          [(ngModel)]="movimento.tipoMovimento" ngDefaultControl
+          label="Valor" 
+          labelPlacement="stacked" 
+          placeholder="Escreva o valor">
+        </ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-button (click)="salvar()" expand="block" fill="clear" shape="round">
+      Salvar
+    </ion-button>
+  </ion-card>
+</ion-content>
+
+<style scoped>
+  ion-button {
+    --background: #D65A31;
+    --background-hover: #9ce0be;
+    --background-activated: #88f4be;
+    --background-focused: #88f4be;
+    --color: rgb(255, 255, 255);
+    --border-radius: 5;
+    --border-color: #000;
+    --border-style: solid;
+    --border-width: 1px;
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --ripple-color: deeppink;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  }
+  </style>
