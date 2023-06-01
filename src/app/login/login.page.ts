@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
       console.error(erro);
       this.invalidLogin = true;
     }).finally(()=>{
-      this.invalidLogin = false;
+      // this.invalidLogin = false;
     });
 
     // console.log("usuario", this.usuario);
