@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
     this.credenciais = {email: this.email.toString(), senha: this.senha.toString()};
 
     this.authService.logar(this.credenciais.email, this.credenciais.senha).then((response)=>{
-      console.log("AAAAAAAAAAAAAAAA", response);
+      // console.log("AAAAAAAAAAAAAAAA", response);
       if(response){
         this.router.navigate(['/dashboard']);
       }

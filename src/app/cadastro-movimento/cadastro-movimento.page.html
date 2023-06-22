@@ -25,6 +25,9 @@
             <ion-select-option value="1">Receber</ion-select-option>
         </ion-select>
       </ion-item>
+
+
+<!--       
       <ion-item>
         <ion-label>Data:</ion-label>
         <ion-datetime-button 
@@ -32,10 +35,27 @@
           datetime="datetime"></ion-datetime-button>
         <ion-modal [keepContentsMounted]="true">
           <ng-template>
-            <ion-datetime id="datetime"></ion-datetime>
+            <ion-datetime id="datetime" name="dataMov" value="dataMov"></ion-datetime>
           </ng-template>
         </ion-modal>
+      </ion-item> -->
+
+
+
+
+      <ion-item>
+        <ion-icon name="calendar-outline"slot="start"></ion-icon>
+        <ion-label >Data limite</ion-label>
+        <ion-datetime [(ngModel)]="dataMov" presentation="date"></ion-datetime>
       </ion-item>
+  
+
+
+
+
+
+
+
       <ion-item>
         <ion-input 
           [(ngModel)]="movimento.valor" ngDefaultControl

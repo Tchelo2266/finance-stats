@@ -10,13 +10,18 @@ import { Movimento, create } from '../models/movimento';
 })
 export class CadastroMovimentoPage implements OnInit {
   public movimento: Movimento = create();
+  public dataMov: any;
 
-  constructor(private movimentoServ: MovimentoService, private router: Router) { }
+  constructor(private movimentoServ: MovimentoService, private router: Router) {
+    // this.movimento.data = new Date().toString();
+   }
 
   ngOnInit() {
   }
 
   public salvar() {
+    console.log(this.movimento);
+    this.movimento.data = this.dataMov;
     this.movimentoServ.add(this.movimento).then((movimento)=>{
       console.log("Movimento", movimento);
 
