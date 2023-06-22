@@ -21,10 +21,10 @@
         <ion-item *ngFor="let item of itens">
           <ion-label>{{ item.descricao }}</ion-label>
           <ion-label>{{ item.tipoMovimento }}</ion-label>
-          <ion-label *ngIf="item.tipoMovimento == 'receber'" color="success">
+          <ion-label *ngIf="item.tipoMovimento == 'Receber'" color="success">
             <ion-icon name="arrow-up-outline"></ion-icon> {{ item.valor }}
           </ion-label>
-          <ion-label *ngIf="item.tipoMovimento == 'pagar'" color="danger">
+          <ion-label *ngIf="item.tipoMovimento == 'Pagar'" color="danger">
             <ion-icon name="arrow-down-outline"></ion-icon> {{ item.valor }}
           </ion-label>
         </ion-item>

@@ -47,22 +47,22 @@ export class DashboardPage implements OnInit {
     const movimentoSnapshot = await getDocs(
       movimentosCol
     );
-    const movimentosList: Movimento[] = movimentoSnapshot.docs.map(
-      function (doc) {
-        const item = { ...doc.data()};
-        return {
-          valor: item['valor'],
-          tipoMovimento: item['tipoMovimento'],
-          descricao: item['descricao'],
-          dataMovimento: item['dataMovimento'],
-          usuario_id: item['usuario_id'],
+    // const movimentosList: Movimento[] = movimentoSnapshot.docs.map(
+    //   function (doc) {
+    //     const item = { ...doc.data()};
+    //     return {
+    //       valor: item['valor'],
+    //       tipoMovimento: item['tipoMovimento'],
+    //       descricao: item['descricao'],
+    //       dataMovimento: item['dataMovimento'],
+    //       usuario_id: item['usuario_id'],
 
-        }
-      }
-    );
-    console.log("movimentosList movimentosList movimentosList",movimentosList);
+    //     }
+    //   }
+    // );
+    // console.log("movimentosList movimentosList movimentosList",movimentosList);
 
-    return movimentosList;
+    // return movimentosList;
   }
 
   public createPieChart() {
